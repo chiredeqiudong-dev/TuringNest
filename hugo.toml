@@ -4,6 +4,13 @@ title = 'TuringNest'
 theme = 'yinyang'
 DefaultContentLanguage = "cn"
 
+
+[languages]
+  [languages.cn]
+    contentDir = "content/cn"
+    languageName = "Chinese"
+    weight = 1
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -16,21 +23,20 @@ DefaultContentLanguage = "cn"
 
 [params]
 headTitle = "Yang Zhang"
+description = "「I came, I saw, I conquered」"
 mainSections = ["posts"]
-disqus = "zy" # disqus account name
 # google tag.js
-extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script><script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-66JHC5XMXL");</script>'
-
-
-[languages]
-  [languages.cn]
-    contentDir = "content/cn"
-    languageName = "Chinese"
-    weight = 1
+extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
+# gisus
+giscus = true
+giscus_repo = "turingzy-dev/blog-giscus"
+giscus_repo_id = "R_kgDOPTLcow"
+giscus_category = "Announcements"
+giscus_category_id = "DIC_kwDOPTLco84Ctb-O"
 
 [[params.socials]]
-name = "HomePage"
-link = "https://homepage.turingzy.cn/"
+  name = "HomePage"
+  link = "https://homepage.turingzy.cn/"
 [[params.socials]]
-name = "Github"
-link = "https://github.com/chiredeqiudong-dev/"
+  name = "Github"
+  link = "https://github.com/chiredeqiudong-dev/"
