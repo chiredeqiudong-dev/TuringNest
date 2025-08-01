@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on TuringNest</title>
+    <link>http://localhost:1313/cn/posts/</link>
+    <description>Recent content in Posts on TuringNest</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <atom:link href="http://localhost:1313/cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/cn/posts/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cn/posts/test/</guid>
+      <description>&lt;h1 id=&#34;伊朗见闻录&#34;&gt;伊朗见闻录&lt;/h1&gt;&#xA;&lt;p&gt;14 Dec 2019&lt;/p&gt;&#xA;&lt;p&gt;10月份的时候在伊朗自南向北，进行了为期 9 天的旅行。&lt;/p&gt;&#xA;&lt;p&gt;之所以会想去伊朗，是因为在 2019 年发生了太多事情让我疲于不断修正自己的价值观，以至于我连基本的「明是非」能力也丧失殆尽。如同数学公式推导一样，我需要有一些基本的「公理」，以此来构建价值观的「定理」。而越是试图去理解这个世界，越是会发现似乎这个世界是不存在一个「普世」的「公理」。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
