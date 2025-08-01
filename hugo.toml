@@ -4,9 +4,22 @@ title = 'TuringNest'
 theme = 'yinyang'
 DefaultContentLanguage = "cn"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = true
+    style = "bw"
+    tabWidth = 2
+
 [params]
 headTitle = "Yang Zhang"
 mainSections = ["posts"]
+disqus = "zy" # disqus account name
+# google tag.js
+extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script><script>window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-66JHC5XMXL");</script>'
 
 
 [languages]
@@ -16,8 +29,8 @@ mainSections = ["posts"]
     weight = 1
 
 [[params.socials]]
-name = "About Me"
-link = "https://joway.io"
+name = "HomePage"
+link = "https://homepage.turingzy.cn/"
 [[params.socials]]
 name = "Github"
-link = "https://github.com/joway"
+link = "https://github.com/chiredeqiudong-dev/"
