@@ -160,11 +160,16 @@ a:hover {
 
 .post-tags {
   display: inline;
-  font-weight: 600;
+  font-weight: 500;
   padding: 2px 5px;
   margin-right: 6px;
   border: #000 2px solid;
   border-radius: 5px;
+}
+
+.post-tags-label {
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .post-date {

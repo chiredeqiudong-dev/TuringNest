@@ -21,9 +21,9 @@
               {{ end }}
             </div>
             <div class="col-xs-6">
-              {{ if .Site.Params.author }}
+              {{ if .Site.Params.author.name }}
               <div class="post-author">
-                <a target="_blank" href="{{ .Site.Params.homepage }}">@{{ .Site.Params.author }}</a>
+                <a target="_blank" href="{{ .Site.Params.author.homepage }}">@{{ .Site.Params.author.name }}</a>
               </div>
               {{ end }}
             </div>
@@ -38,13 +38,20 @@
 
         <div class="row middle-xs">
           <div class="col-xs-12">
-            {{ range .Params.tags }}
-            <div class="post-tags">
-              <a href="{{ site.LanguagePrefix }}/tags/{{ lower . | urlize }}/">
-                {{ . }}
-              </a>
+            <div class="post-tags-label">
+              {{ if .Params.tags }}
+                <span>#tags</span>
+              {{ end }}
             </div>
-            {{ end }}
+            <div>
+              {{ range .Params.tags }}
+                <div class="post-tags">
+                  <a href="{{ site.LanguagePrefix }}/tags/{{ lower . | urlize }}/">
+                    {{ . }}
+                  </a>
+                </div>
+              {{ end }}
+            </div>
           </div>
         </div>
         {{ if in .Site.Params.mainSections .Type }}

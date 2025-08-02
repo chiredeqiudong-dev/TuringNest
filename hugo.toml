@@ -2,7 +2,6 @@ baseURL = 'https://blog.turingzy.cn'
 languageCode = 'en-us'
 title = 'TuringNest'
 theme = 'yinyang'
-copyright = '© 2023 ABC Widgets, Inc.'
 
 [permalinks]
   posts = "/posts/:slug/"
@@ -29,6 +28,10 @@ copyright = '© 2023 ABC Widgets, Inc.'
   description = "「I came, I saw, I conquered」"
   lazyImage = true
   siteStartDate = "2025-06-01"
+  [params.author]
+    name = "Zhang Yang"
+    email = 'email@proton.me'
+    homepage = "https://github.com/chiredeqiudong-dev/"
   # google tag.js
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
   # gisus
@@ -41,9 +44,6 @@ copyright = '© 2023 ABC Widgets, Inc.'
 [[params.socials]]
   name = "RSS"
   link = "https://blog.turingzy.cn/index.xml"
-[[params.socials]]
-  name = "HomePage"
-  link = "https://github.com/chiredeqiudong-dev/"
 [[params.socials]]
   name = "Github"
   link = "https://github.com/chiredeqiudong-dev/"

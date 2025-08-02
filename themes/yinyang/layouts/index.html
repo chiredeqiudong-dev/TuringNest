@@ -23,7 +23,7 @@
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                   </div>
                   <div class="col-xs-1 col-sm-2 posts-categories">
-                    {{ range .Params.categories }}
+                    {{ with .Params.categories }}
                     <div class="posts-category">
                       <a href="/categories/{{ lower . }}/"><strong>{{ . }}</strong></a>
                     </div>
