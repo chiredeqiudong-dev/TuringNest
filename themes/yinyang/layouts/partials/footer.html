@@ -1,10 +1,30 @@
 <div class="site-footer">
-  <!-- {{ range .Site.Params.socials }}
+  <div class="site-footer-item" id="site-running-time"></div>
   <div class="site-footer-item">
-    <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+    Copyright©{{ (time.AsTime .Site.Params.siteStartDate).Format "2006" }}-{{ now.Format "2006" }} Yang Zhang's Blog
   </div>
-  {{ end }} -->
-  <!-- <div class="site-footer-item">
-    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme</a>
-  </div> -->
 </div>
+
+<script>
+  function updateRunningTime() {
+    const startDate = new Date("{{ .Site.Params.siteStartDate }}");
+    const now = new Date();
+    let diffMs = now - startDate; // 毫秒差
+
+    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    diffMs %= (1000 * 60 * 60 * 24);
+    const hours = Math.floor(diffMs / (1000 * 60 * 60));
+    diffMs %= (1000 * 60 * 60);
+    const minutes = Math.floor(diffMs / (1000 * 60));
+    diffMs %= (1000 * 60);
+    const seconds = Math.floor(diffMs / 1000);
+
+    document.getElementById("site-running-time").textContent = 
+      `站点运行时间：${days} 天 ${hours} 时 ${minutes} 分 ${seconds} 秒`;
+  }
+
+  // 初始加载时更新
+  updateRunningTime();
+  // 每秒更新一次
+  setInterval(updateRunningTime, 1000);
+</script>

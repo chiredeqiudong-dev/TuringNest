@@ -2,6 +2,7 @@
 title: 赤壁赋
 date: 2018-03-04
 categories: ['诗歌']
+slug: chi-bi-fu
 draft: false
 ---
 

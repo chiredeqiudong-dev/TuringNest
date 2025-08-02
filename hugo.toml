@@ -4,12 +4,13 @@ title = 'TuringNest'
 theme = 'yinyang'
 DefaultContentLanguage = "cn"
 
-
 [languages]
   [languages.cn]
     contentDir = "content/cn"
     languageName = "Chinese"
     weight = 1
+    [languages.cn.permalinks]
+      posts = "/posts/cn/:slug/"  # 文章 URL 结构
 
 [markup]
   [markup.goldmark]
@@ -23,7 +24,11 @@ DefaultContentLanguage = "cn"
 
 [params]
 headTitle = "Yang Zhang"
+author = "Yang Zhang"
+homepage = "https://homepage.turingzy.cn"
 description = "「I came, I saw, I conquered」"
+lazyImage = true
+siteStartDate = "2025-06-01"
 mainSections = ["posts"]
 # google tag.js
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
@@ -36,7 +41,7 @@ giscus_category_id = "DIC_kwDOPTLco84Ctb-O"
 
 [[params.socials]]
   name = "HomePage"
-  link = "https://homepage.turingzy.cn/"
+  link = "https://github.com/chiredeqiudong-dev/"
 [[params.socials]]
   name = "Github"
   link = "https://github.com/chiredeqiudong-dev/"
