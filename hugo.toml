@@ -1,16 +1,11 @@
-baseURL = 'https://blog.turingzy.cn/'
+baseURL = 'https://blog.turingzy.cn'
 languageCode = 'en-us'
 title = 'TuringNest'
 theme = 'yinyang'
-DefaultContentLanguage = "cn"
+copyright = '© 2023 ABC Widgets, Inc.'
 
-[languages]
-  [languages.cn]
-    contentDir = "content/cn"
-    languageName = "Chinese"
-    weight = 1
-    [languages.cn.permalinks]
-      posts = "/posts/cn/:slug/"  # 文章 URL 结构
+[permalinks]
+  posts = "/posts/:slug/"
 
 [markup]
   [markup.goldmark]
@@ -22,23 +17,30 @@ DefaultContentLanguage = "cn"
     style = "bw"
     tabWidth = 2
 
-[params]
-headTitle = "Yang Zhang"
-author = "Yang Zhang"
-homepage = "https://homepage.turingzy.cn"
-description = "「I came, I saw, I conquered」"
-lazyImage = true
-siteStartDate = "2025-06-01"
-mainSections = ["posts"]
-# google tag.js
-extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
-# gisus
-giscus = true
-giscus_repo = "turingzy-dev/blog-giscus"
-giscus_repo_id = "R_kgDOPTLcow"
-giscus_category = "Announcements"
-giscus_category_id = "DIC_kwDOPTLco84Ctb-O"
+[outputs]
+  home = ["html"]
+  section = ["html","rss"]
+  taxonomy = ["html"]
+  term = ["html"]
 
+[params]
+  mainSections = ["posts"]
+  headTitle = "Yang Zhang"
+  description = "「I came, I saw, I conquered」"
+  lazyImage = true
+  siteStartDate = "2025-06-01"
+  # google tag.js
+  extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
+  # gisus
+  giscus = true
+  giscus_repo = "turingzy-dev/blog-giscus"
+  giscus_repo_id = "R_kgDOPTLcow"
+  giscus_category = "Announcements"
+  giscus_category_id = "DIC_kwDOPTLco84Ctb-O"
+
+[[params.socials]]
+  name = "RSS"
+  link = "http://localhost:1313/posts/index.xml"
 [[params.socials]]
   name = "HomePage"
   link = "https://github.com/chiredeqiudong-dev/"
