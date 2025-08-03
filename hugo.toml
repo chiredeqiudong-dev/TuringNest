@@ -30,8 +30,8 @@ theme = 'yinyang'
   siteStartDate = "2025-06-01"
   [params.author]
     name = "Zhang Yang"
-    email = 'email@proton.me'
-    homepage = "https://github.com/chiredeqiudong-dev/"
+    email = 'email@turingzy.cn'
+    homepage = "/about/"
   # google tag.js
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
   # gisus
@@ -41,9 +41,13 @@ theme = 'yinyang'
   giscus_category = "Announcements"
   giscus_category_id = "DIC_kwDOPTLco84Ctb-O"
 
+
 [[params.socials]]
+  name = "Projects"
+  link = "/projects/"
+[[params.socials]]
+  name = "About"
+  link = "/about/"
+  [[params.socials]]
   name = "RSS"
   link = "https://blog.turingzy.cn/index.xml"
-[[params.socials]]
-  name = "Github"
-  link = "https://github.com/chiredeqiudong-dev/"
