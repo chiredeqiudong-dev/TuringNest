@@ -28,10 +28,6 @@ theme = 'yinyang'
   description = "「I came, I saw, I conquered」"
   lazyImage = true
   siteStartDate = "2025-06-01"
-  [params.author]
-    name = "Zhang Yang"
-    email = 'email@turingzy.cn'
-    homepage = "/about/"
   # google tag.js
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-66JHC5XMXL"></script>'
   # gisus
@@ -40,8 +36,10 @@ theme = 'yinyang'
   giscus_repo_id = "R_kgDOPTLcow"
   giscus_category = "Announcements"
   giscus_category_id = "DIC_kwDOPTLco84Ctb-O"
-
-
+[params.author]
+  name = "Zhang Yang"
+  email = 'email@turingzy.cn'
+  homepage = "/about/"
 [[params.socials]]
   name = "Projects"
   link = "/projects/"
