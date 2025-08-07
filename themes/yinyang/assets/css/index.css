@@ -40,20 +40,23 @@ a:hover {
   margin: 0;
   padding: 0 1em;
   color: #57606a;
-  border-left: 0.25em solid #d0d7de;
+  border-left: 0.25em solid black;
 }
 
 .markdown-body pre {
+  border: 2px solid black; 
+  background-color: inherit; 
   padding: 16px;
   overflow: auto;
-  border-radius: 10px;
+  border-radius: 10px; 
+  font-size: 15px;
 }
 
 .markdown-body code {
   padding: 0.2em 0.4em;
-  font-size: 85%;
-  background-color: #f6f8fa;
-  border-radius: 6px;
+  font-size: 100%;
+  background-color: #cdcdcd;
+  border-radius: 4px;
 }
 
 /* reset code */

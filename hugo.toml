@@ -12,10 +12,9 @@ theme = 'yinyang'
       unsafe = true
   [markup.highlight]
     guessSyntax = true
-    noClasses = true
-    style = "bw"
+    noClasses = true #使用行内样式
+    style = "github"
     tabWidth = 2
-
 [outputs]
   home = ["html","rss"]
   section = ["html"]
