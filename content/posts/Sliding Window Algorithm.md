@@ -17,7 +17,7 @@ tags:
 
 滑动窗口算法是一种用于解决数组或字符串相关算法问题的有效技术。它通过维护一个在数据结构上滑动的“窗口”来减少嵌套循环的需求，从而优化时间复杂度。滑动窗口不仅在算法题中经常使用，在我们的业务中也有用到，比如说“限流算法”就有基于滑动窗口来做的。
 
-![](https://img.turingzy.cn/2025/Pasted%20image%2020250530193956.png)
+![](https://cdn.img.turingzy.cn/2025/Pasted%20image%2020250530193956.png)
 
 我们写算法题时主要会用到二种不同类型的滑动窗口：**定长** OR **不定长**。
 
@@ -41,7 +41,7 @@ tags:
 
 以滑动窗口题单中的[定长子串中元音的最大数目](https://leetcode.cn/problems/maximum-number-of-vowels-in-a-substring-of-given-length/)为例：
 
-![](https://img.turingzy.cn/2025/Pasted%20image%2020250530201014.png)
+![](https://cdn.img.turingzy.cn/2025/Pasted%20image%2020250530201014.png)
 
 定长滑动窗口题目中，我觉得比较难的是如何把题目要求转换为基本的定长窗口滑动问题。
 
@@ -97,7 +97,7 @@ class Solution {
 
 >管理窗口内的元素我们通常会使用 HashSet、HashMap 去解决重复元素问题，有时候还会使用 `diff/need` 变量直接记录差异。
 
-![](https://img.turingzy.cn/2025/Pasted%20image%2020250530205655.png)
+![](https:/cdn.img.turingzy.cn/2025/Pasted%20image%2020250530205655.png)
 
 如上图所示，符合题目要求的窗口长度可能很大，也可能很小。所以不定长滑动窗口的解可能是让我们**求最长子数组** OR **求最短子数组**，而且题目一般会有「至多」OR 「至少」的要求。它们二者在代码编写上有些许区别（见后续模板）。
 
@@ -111,7 +111,7 @@ class Solution {
 
 同理对于窗口越短越合法，一旦 `[left,right]` 这个子数组符合题目要求，那么 `[left,left] [left,left+1] ... [left,right - 1]` 这些子数组也全都合法 ，更新统计量变为 `cnt += right - left + 1`。
 
-![](https://img.turingzy.cn/2025/Pasted%20image%2020250530220141.png)
+![](https://cdn.img.turingzy.cn/2025/Pasted%20image%2020250530220141.png)
 
 对于窗口恰好满足条件的子数组个数，以[和相同的二元子数组](https://leetcode.cn/problems/binary-subarrays-with-sum/)这题为例。
 
