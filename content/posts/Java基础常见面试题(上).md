@@ -1,5 +1,5 @@
 ---
-title: Java基础常见面试题（上）
+title: Java基础常见面试题(上)
 slug: java-basic-questions-1
 categories: Java八股
 tags:
@@ -236,5 +236,4 @@ public static void method2(String arg1, String... args) {
 本质：Java 的可变参数编译后实际会被转换成一个数组。
 # 参考
 
-- [Java基础常见面试题总结(上)](https://javaguide.cn/java/basis/java-basic-questions-01.html)
-
+- 转载至 [Java基础常见面试题总结(上)](https://javaguide.cn/java/basis/java-basic-questions-01.html)
