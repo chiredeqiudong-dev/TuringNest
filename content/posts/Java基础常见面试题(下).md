@@ -246,3 +246,7 @@ for (String s : strs) {
 ### Java 中有哪些常见的语法糖？
 
 Java 中最常用的语法糖主要有泛型、自动拆装箱、变长参数、枚举、内部类、增强 for 循环、try-with-resources 语法、lambda 表达式等。
+
+# 参考
+
+- 转载至 [Java基础常见面试题总结(下)](https://javaguide.cn/java/basis/java-basic-questions-03.html)
