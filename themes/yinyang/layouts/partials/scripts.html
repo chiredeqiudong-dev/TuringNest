@@ -49,6 +49,84 @@ function goBackOrHome() {
   }
 }
 
+// External link confirmation modal
+(function() {
+  var siteDomain = 'turingzy.cn';
+
+  function isExternalLink(link) {
+    var rawHref = link.getAttribute('href') || '';
+    // Skip anchors, javascript: links, empty hrefs
+    if (!rawHref || rawHref.charAt(0) === '#' || rawHref.indexOf('javascript:') === 0) return false;
+    var hostname = link.hostname;
+    if (!hostname) return false;
+    // Allow same-site links (blog.turingzy.cn, turingzy.cn, etc.)
+    if (hostname === siteDomain || hostname.slice(-('.' + siteDomain).length) === '.' + siteDomain) return false;
+    return true;
+  }
+
+  function showConfirm(url) {
+    var modal = document.getElementById('ext-link-modal');
+    var urlEl = document.getElementById('ext-link-modal-url');
+    if (!modal || !urlEl) return;
+    urlEl.textContent = url;
+    modal.classList.add('active');
+    modal._targetUrl = url;
+  }
+
+  function hideConfirm() {
+    var modal = document.getElementById('ext-link-modal');
+    if (modal) {
+      modal.classList.remove('active');
+      modal._targetUrl = '';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Create modal DOM
+    var modal = document.createElement('div');
+    modal.id = 'ext-link-modal';
+    modal.className = 'ext-link-modal';
+    modal.innerHTML =
+      '<div class="ext-link-modal-box">' +
+        '<h3 class="ext-link-modal-title">即将离开本站</h3>' +
+        '<div class="ext-link-modal-url" id="ext-link-modal-url"></div>' +
+        '<div class="ext-link-modal-actions">' +
+          '<button class="ext-link-modal-btn" id="ext-link-cancel">取消</button>' +
+          '<button class="ext-link-modal-btn primary" id="ext-link-confirm">继续访问</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    // Button events
+    document.getElementById('ext-link-cancel').addEventListener('click', hideConfirm);
+    document.getElementById('ext-link-confirm').addEventListener('click', function() {
+      var url = modal._targetUrl;
+      hideConfirm();
+      if (url) window.open(url, '_blank', 'noopener');
+    });
+
+    // Click overlay to close
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) hideConfirm();
+    });
+
+    // Escape to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') hideConfirm();
+    });
+
+    // Intercept external link clicks
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link || !link.href) return;
+      if (isExternalLink(link)) {
+        e.preventDefault();
+        showConfirm(link.href);
+      }
+    });
+  });
+})();
+
 // Image lightbox functionality
 document.addEventListener('DOMContentLoaded', function() {
   // Create modal
