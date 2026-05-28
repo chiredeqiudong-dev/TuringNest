@@ -1005,3 +1005,32 @@ tr:hover {
 .ext-link-modal-btn.primary:hover {
   opacity: 0.85;
 }
+
+/* Theme toggle - circle-blur-top-left (View Transitions API) */
+html { view-transition-name: root; }
+
+::view-transition-group(root) {
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+::view-transition-new(root) {
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="0" cy="0" r="18" fill="white" filter="url(%23blur)"/></svg>') top left / 0 no-repeat;
+  mask-origin: content-box;
+  animation: vt-scale 1s;
+  animation-fill-mode: both;
+  transform-origin: top left;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: vt-scale 1s;
+  animation-fill-mode: both;
+  transform-origin: top left;
+  z-index: -1;
+}
+
+@keyframes vt-scale {
+  to {
+    mask-size: 350vmax;
+  }
+}
