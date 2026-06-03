@@ -1,7 +1,7 @@
 ---
 title: 什么是 SpringBoot 自动配置？
 slug: what-is-spring-boot-autowiring
-categories: SpringBoot
+categories: 后端开发
 date: 2025-09-27
 ---
 
