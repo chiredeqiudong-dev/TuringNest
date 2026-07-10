@@ -126,6 +126,19 @@
       }
     },
     {
+      "name": "Cyberpunk 2077",
+      "appid": 1091500,
+      "playtime_forever": 1.9,
+      "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1091500/6897c3848f3e0350d512f59d5bae174a1e3739f9.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+      "last_played": "2026-07-11 01:26:28",
+      "app_url": "https://store.steampowered.com/app/1091500/",
+      "achievements": {
+        "achieved": 1,
+        "total": 57
+      }
+    },
+    {
       "name": "This War of Mine",
       "appid": 282070,
       "playtime_forever": 1.8,
@@ -423,19 +436,6 @@
       "achievements": {
         "achieved": 0,
         "total": 51
-      }
-    },
-    {
-      "name": "Cyberpunk 2077",
-      "appid": 1091500,
-      "playtime_forever": 0.0,
-      "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1091500/6897c3848f3e0350d512f59d5bae174a1e3739f9.jpg",
-      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
-      "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1091500/",
-      "achievements": {
-        "achieved": 0,
-        "total": 57
       }
     },
     {
