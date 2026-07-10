@@ -3,318 +3,564 @@
   "games": [
     {
       "name": "Counter-Strike 2",
+      "appid": 730,
       "playtime_forever": 423.6,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
       "last_played": "2026-06-25 15:46:36",
-      "app_url": "https://store.steampowered.com/app/730/"
+      "app_url": "https://store.steampowered.com/app/730/",
+      "achievements": {
+        "achieved": 1,
+        "total": 1
+      }
     },
     {
       "name": "Resident Evil 4",
+      "appid": 2050650,
       "playtime_forever": 15.5,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/2050650/817358b8013c55831ea10d031ef9c0b151110826.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
       "last_played": "2026-02-19 21:17:17",
-      "app_url": "https://store.steampowered.com/app/2050650/"
+      "app_url": "https://store.steampowered.com/app/2050650/",
+      "achievements": {
+        "achieved": 14,
+        "total": 46
+      }
     },
     {
       "name": "Resident Evil 2",
+      "appid": 883710,
       "playtime_forever": 12.8,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/883710/86ef2fdebeced746313994ccf2d7afb1f2887bf0.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/header.jpg",
       "last_played": "2026-07-06 16:20:41",
-      "app_url": "https://store.steampowered.com/app/883710/"
+      "app_url": "https://store.steampowered.com/app/883710/",
+      "achievements": {
+        "achieved": 21,
+        "total": 44
+      }
     },
     {
       "name": "Left 4 Dead 2",
+      "appid": 550,
       "playtime_forever": 10.3,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/550/7d5a243f9500d2f8467312822f8af2a2928777ed.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/550/header.jpg",
       "last_played": "2024-01-11 03:32:23",
-      "app_url": "https://store.steampowered.com/app/550/"
+      "app_url": "https://store.steampowered.com/app/550/",
+      "achievements": {
+        "achieved": 3,
+        "total": 101
+      }
     },
     {
       "name": "Assassin's Creed II",
+      "appid": 33230,
       "playtime_forever": 9.5,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/33230/0492d8ee860ac99168e46efeb003029c3224cb38.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/33230/header.jpg",
       "last_played": "2024-05-12 19:52:05",
-      "app_url": "https://store.steampowered.com/app/33230/"
+      "app_url": "https://store.steampowered.com/app/33230/",
+      "achievements": null
     },
     {
       "name": "Wallpaper Engine",
+      "appid": 431960,
       "playtime_forever": 6.8,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/431960/72edaed9d748c6cf7397ffb1c83f0b837b9ebd9d.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/431960/header.jpg",
       "last_played": "2026-07-02 23:48:10",
-      "app_url": "https://store.steampowered.com/app/431960/"
+      "app_url": "https://store.steampowered.com/app/431960/",
+      "achievements": {
+        "achieved": 2,
+        "total": 17
+      }
     },
     {
       "name": "Resident Evil 3",
+      "appid": 952060,
       "playtime_forever": 5.6,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/952060/136b7a39787b0d8df93cf3b757c36ae1eb392784.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/952060/header.jpg",
       "last_played": "2026-07-08 21:25:20",
-      "app_url": "https://store.steampowered.com/app/952060/"
+      "app_url": "https://store.steampowered.com/app/952060/",
+      "achievements": {
+        "achieved": 17,
+        "total": 32
+      }
     },
     {
       "name": "The Witcher 3: Wild Hunt",
+      "appid": 292030,
       "playtime_forever": 4.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/292030/7b52d11edee478d652ef4e7103e00644bed2c74c.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
       "last_played": "2024-07-29 15:01:12",
-      "app_url": "https://store.steampowered.com/app/292030/"
+      "app_url": "https://store.steampowered.com/app/292030/",
+      "achievements": {
+        "achieved": 1,
+        "total": 78
+      }
     },
     {
       "name": "Lethal Company",
+      "appid": 1966720,
       "playtime_forever": 3.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1966720/80d2453285274e4723c884a671cdd3f8fe2f766f.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/header.jpg",
       "last_played": "2024-03-24 21:42:26",
-      "app_url": "https://store.steampowered.com/app/1966720/"
+      "app_url": "https://store.steampowered.com/app/1966720/",
+      "achievements": null
     },
     {
       "name": "The Forest",
+      "appid": 242760,
       "playtime_forever": 2.9,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/242760/3a6847f6ac5879e48531db52261771d5e22904ac.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg",
       "last_played": "2024-01-01 15:39:51",
-      "app_url": "https://store.steampowered.com/app/242760/"
+      "app_url": "https://store.steampowered.com/app/242760/",
+      "achievements": {
+        "achieved": 4,
+        "total": 45
+      }
     },
     {
       "name": "This War of Mine",
+      "appid": 282070,
       "playtime_forever": 1.8,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/282070/38ad6fd10e2b89ab24e8013584ece7961bebe086.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/282070/header.jpg",
       "last_played": "2025-09-03 11:10:52",
-      "app_url": "https://store.steampowered.com/app/282070/"
+      "app_url": "https://store.steampowered.com/app/282070/",
+      "achievements": {
+        "achieved": 5,
+        "total": 59
+      }
     },
     {
       "name": "ATRI -My Dear Moments-",
+      "appid": 1230140,
       "playtime_forever": 1.7,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1230140/40e9052985afac2661d5391a8a74ff1e2d837fdf.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1230140/header.jpg",
       "last_played": "2025-04-05 09:51:11",
-      "app_url": "https://store.steampowered.com/app/1230140/"
+      "app_url": "https://store.steampowered.com/app/1230140/",
+      "achievements": null
     },
     {
       "name": "Content Warning",
+      "appid": 2881650,
       "playtime_forever": 1.7,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/2881650/513cf7f2e22c94f4372369e29bffccc4c239e9c0.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/2881650/header.jpg",
       "last_played": "2024-04-04 00:26:49",
-      "app_url": "https://store.steampowered.com/app/2881650/"
+      "app_url": "https://store.steampowered.com/app/2881650/",
+      "achievements": {
+        "achieved": 0,
+        "total": 48
+      }
     },
     {
       "name": "Goose Goose Duck",
+      "appid": 1568590,
       "playtime_forever": 1.6,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1568590/3b802d5010d6d5d72c93a8565b260c6042cc9390.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1568590/header.jpg",
       "last_played": "2023-12-31 15:19:05",
-      "app_url": "https://store.steampowered.com/app/1568590/"
+      "app_url": "https://store.steampowered.com/app/1568590/",
+      "achievements": {
+        "achieved": 0,
+        "total": 38
+      }
     },
     {
       "name": "Resident Evil 7 Biohazard",
+      "appid": 418370,
       "playtime_forever": 1.2,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/418370/675cd2fbaae3c2a74a0c7e9eea71e969ff90d6bb.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/418370/header.jpg",
       "last_played": "2026-07-09 21:45:58",
-      "app_url": "https://store.steampowered.com/app/418370/"
+      "app_url": "https://store.steampowered.com/app/418370/",
+      "achievements": {
+        "achieved": 4,
+        "total": 58
+      }
     },
     {
       "name": "Street Fighter™ 6",
+      "appid": 1364780,
       "playtime_forever": 1.2,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1364780/d8057ee15238077329f869c1610e257461ab3f76.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1364780/header.jpg",
       "last_played": "2025-09-30 01:04:31",
-      "app_url": "https://store.steampowered.com/app/1364780/"
+      "app_url": "https://store.steampowered.com/app/1364780/",
+      "achievements": {
+        "achieved": 4,
+        "total": 43
+      }
     },
     {
       "name": "The Hungry Lamb: Traveling in the Late Ming Dynasty",
+      "appid": 2593370,
       "playtime_forever": 1.2,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/2593370/54a7574438ba0458909b1879bfca1c1992b839a4.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/2593370/header.jpg",
       "last_played": "2024-07-05 19:46:13",
-      "app_url": "https://store.steampowered.com/app/2593370/"
+      "app_url": "https://store.steampowered.com/app/2593370/",
+      "achievements": {
+        "achieved": 2,
+        "total": 16
+      }
     },
     {
       "name": "Slay the Spire",
+      "appid": 646570,
       "playtime_forever": 0.9,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/646570/33ea124ea8c03a9ce7012d34c3b348a351612fca.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/646570/header.jpg",
       "last_played": "2026-06-19 12:17:06",
-      "app_url": "https://store.steampowered.com/app/646570/"
+      "app_url": "https://store.steampowered.com/app/646570/",
+      "achievements": {
+        "achieved": 0,
+        "total": 46
+      }
     },
     {
       "name": "VRChat",
+      "appid": 438100,
       "playtime_forever": 0.7,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/438100/header.jpg",
       "last_played": "2026-02-24 22:26:17",
-      "app_url": "https://store.steampowered.com/app/438100/"
+      "app_url": "https://store.steampowered.com/app/438100/",
+      "achievements": null
     },
     {
       "name": "Commando Collection",
+      "appid": 3059010,
       "playtime_forever": 0.4,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/3059010/a0129ebbc9755c132a19664cdcc1c703a669a031.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/3059010/header.jpg",
       "last_played": "2025-09-30 13:25:50",
-      "app_url": "https://store.steampowered.com/app/3059010/"
+      "app_url": "https://store.steampowered.com/app/3059010/",
+      "achievements": {
+        "achieved": 0,
+        "total": 24
+      }
     },
     {
       "name": "Left 4 Dead",
+      "appid": 500,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/500/428df26bc35b09319e31b1ffb712487b20b3245c.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/500/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/500/"
+      "app_url": "https://store.steampowered.com/app/500/",
+      "achievements": {
+        "achieved": 0,
+        "total": 73
+      }
     },
     {
       "name": "Hitman: Absolution",
+      "appid": 203140,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/203140/fe5e36ac1548793eb48b6b25b701b37d86fb94a3.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/203140/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/203140/"
+      "app_url": "https://store.steampowered.com/app/203140/",
+      "achievements": {
+        "achieved": 0,
+        "total": 47
+      }
     },
     {
       "name": "Hitman: Sniper Challenge",
+      "appid": 205930,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/205930/756d0ca797b4c8a1340dd73bf49b0bb0656a1802.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/205930/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/205930/"
+      "app_url": "https://store.steampowered.com/app/205930/",
+      "achievements": null
     },
     {
       "name": "Batman™: Arkham Knight",
+      "appid": 208650,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/208650/f6c2ce13796844750dfbd01685fb009eeac4bf70.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/208650/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/208650/"
+      "app_url": "https://store.steampowered.com/app/208650/",
+      "achievements": {
+        "achieved": 0,
+        "total": 113
+      }
     },
     {
       "name": "Dying Light",
+      "appid": 239140,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/239140/d575b4ba3480fe20aaeda8e8f498c3e47033069d.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/239140/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/239140/"
+      "app_url": "https://store.steampowered.com/app/239140/",
+      "achievements": {
+        "achieved": 0,
+        "total": 78
+      }
     },
     {
       "name": "The Binding of Isaac: Rebirth",
+      "appid": 250900,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/250900/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/250900/"
+      "app_url": "https://store.steampowered.com/app/250900/",
+      "achievements": {
+        "achieved": 0,
+        "total": 641
+      }
     },
     {
       "name": "100% Orange Juice",
+      "appid": 282800,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/282800/baaf4be38deeb8a631567ee6c651ca23b65c834a.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/282800/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/282800/"
+      "app_url": "https://store.steampowered.com/app/282800/",
+      "achievements": {
+        "achieved": 0,
+        "total": 359
+      }
     },
     {
       "name": "Kingdom Come: Deliverance",
+      "appid": 379430,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/379430/915ec515c36645855abed0476b5b0891d8a4e47a.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/379430/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/379430/"
+      "app_url": "https://store.steampowered.com/app/379430/",
+      "achievements": {
+        "achieved": 0,
+        "total": 82
+      }
     },
     {
       "name": "Rise of the Tomb Raider",
+      "appid": 391220,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/391220/0b8a37f32ed2b7c934be8aa94d53f71e274c6497.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/391220/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/391220/"
+      "app_url": "https://store.steampowered.com/app/391220/",
+      "achievements": {
+        "achieved": 0,
+        "total": 143
+      }
     },
     {
       "name": "STEINS;GATE",
+      "appid": 412830,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/412830/adddf0c18983e5b0e2a8967939a774a201589674.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/412830/header.jpg",
       "last_played": "2025-04-05 09:54:40",
-      "app_url": "https://store.steampowered.com/app/412830/"
+      "app_url": "https://store.steampowered.com/app/412830/",
+      "achievements": {
+        "achieved": 0,
+        "total": 42
+      }
     },
     {
       "name": "Assassin's Creed Origins",
+      "appid": 582160,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/582160/dff3a53f93d39f1e0432ec4f22d31c12aeefa36f.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/582160/"
+      "app_url": "https://store.steampowered.com/app/582160/",
+      "achievements": {
+        "achieved": 0,
+        "total": 67
+      }
     },
     {
       "name": "Desperados III",
+      "appid": 610370,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/610370/3f8d3ff835397cb30ee44693757456060946de63.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/610370/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/610370/"
+      "app_url": "https://store.steampowered.com/app/610370/",
+      "achievements": {
+        "achieved": 0,
+        "total": 36
+      }
     },
     {
       "name": "Paradox Soul",
+      "appid": 610570,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/610570/c6279c40ef6ab4e794eafd61e61be4f6f5f2f270.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/610570/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/610570/"
+      "app_url": "https://store.steampowered.com/app/610570/",
+      "achievements": null
     },
     {
       "name": "RESIDENT EVIL RESISTANCE",
+      "appid": 952070,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/952070/05c0148e8e414361742c38e3709ca9cdd9c637a8.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/952070/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/952070/"
+      "app_url": "https://store.steampowered.com/app/952070/",
+      "achievements": {
+        "achieved": 0,
+        "total": 51
+      }
     },
     {
       "name": "Cyberpunk 2077",
+      "appid": 1091500,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1091500/6897c3848f3e0350d512f59d5bae174a1e3739f9.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1091500/"
+      "app_url": "https://store.steampowered.com/app/1091500/",
+      "achievements": {
+        "achieved": 0,
+        "total": 57
+      }
     },
     {
       "name": "Red Dead Redemption 2",
+      "appid": 1174180,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1174180/5106abd9c1187a97f23295a0ba9470c94804ec6c.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1174180/"
+      "app_url": "https://store.steampowered.com/app/1174180/",
+      "achievements": {
+        "achieved": 0,
+        "total": 51
+      }
     },
     {
       "name": "Resident Evil Village",
+      "appid": 1196590,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1196590/d97fb0681f9517c65a9d7ba9dd7e63f775375645.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1196590/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1196590/"
+      "app_url": "https://store.steampowered.com/app/1196590/",
+      "achievements": {
+        "achieved": 0,
+        "total": 56
+      }
     },
     {
       "name": "Detroit: Become Human",
+      "appid": 1222140,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1222140/3d9f5bc971d44398aef740c0d8e79a358be2e800.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1222140/"
+      "app_url": "https://store.steampowered.com/app/1222140/",
+      "achievements": {
+        "achieved": 0,
+        "total": 48
+      }
     },
     {
       "name": "Resident Evil Re:Verse",
+      "appid": 1236300,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1236300/eb2517104ec768ea3217ca875f94925bfcf3d7bb.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1236300/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1236300/"
+      "app_url": "https://store.steampowered.com/app/1236300/",
+      "achievements": {
+        "achieved": 0,
+        "total": 12
+      }
     },
     {
       "name": "Toy Tinker Simulator",
+      "appid": 1510580,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1510580/7a7c69259b7d1f622d8f7c0d34f93a85683c8fa4.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1510580/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1510580/"
+      "app_url": "https://store.steampowered.com/app/1510580/",
+      "achievements": {
+        "achieved": 0,
+        "total": 24
+      }
     },
     {
       "name": "Hellslave",
+      "appid": 1608450,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/1608450/733a62d2f790189f9cecb01bebf8e014a231a86e.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1608450/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/1608450/"
+      "app_url": "https://store.steampowered.com/app/1608450/",
+      "achievements": {
+        "achieved": 0,
+        "total": 43
+      }
     },
     {
       "name": "HER TREES : THE PUZZLE HOUSE",
+      "appid": 2725090,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/2725090/a07b5fed6a69133194014f8efdedec632e2be425.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/2725090/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/2725090/"
+      "app_url": "https://store.steampowered.com/app/2725090/",
+      "achievements": null
     },
     {
       "name": "WHAT THE PAK?!",
+      "appid": 2752710,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/2752710/bcc6b61bf63fe3ec675bb4da845006d979e6901a.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/2752710/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/2752710/"
+      "app_url": "https://store.steampowered.com/app/2752710/",
+      "achievements": {
+        "achieved": 0,
+        "total": 56
+      }
     },
     {
       "name": "Buckshot Roulette",
+      "appid": 2835570,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/2835570/81779afdc4209795d9ccf7948514b9a227acf601.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/2835570/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/2835570/"
+      "app_url": "https://store.steampowered.com/app/2835570/",
+      "achievements": {
+        "achieved": 0,
+        "total": 16
+      }
     },
     {
       "name": "HER TREES : PUZZLE DREAM",
+      "appid": 3300800,
       "playtime_forever": 0.0,
       "img_icon_url": "https://media.steampowered.com/steamcommunity/public/images/apps/3300800/040bcab21281845460a5350ff9a28944110d24d6.jpg",
+      "cover_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/3300800/header.jpg",
       "last_played": "",
-      "app_url": "https://store.steampowered.com/app/3300800/"
+      "app_url": "https://store.steampowered.com/app/3300800/",
+      "achievements": null
     }
   ]
 }

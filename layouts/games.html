@@ -13,47 +13,95 @@
         <div class="post-content markdown-body">
           {{ .Content }}
           {{ if hugo.Data.games }}
-          <!-- 统计卡片 -->
-          <div class="games-stats">
-            <div class="stats-card">
-              <span class="stats-number">{{ hugo.Data.games.total }}</span>
-              <span class="stats-label">游戏总数</span>
+          {{ $games := hugo.Data.games.games }}
+          {{ $played := where $games "playtime_forever" "gt" 0 }}
+          {{ $unplayed := where $games "playtime_forever" "eq" 0 }}
+
+          {{ $totalHours := 0.0 }}
+          {{ range $played }}{{ $totalHours = add $totalHours .playtime_forever }}{{ end }}
+
+          <!-- 账目式统计条 -->
+          <div class="steam-ledger">
+            <div class="ledger-item">
+              <a class="ledger-user" href="https://steamcommunity.com/id/turingzy/" target="_blank" rel="noopener">爱吃番茄的猫</a>
             </div>
-            <div class="stats-card">
-              <span class="stats-number">{{ len (where hugo.Data.games.games "playtime_forever" "gt" 0) }}</span>
-              <span class="stats-label">已玩过的游戏</span>
+            <div class="ledger-item">
+              <span class="ledger-num">{{ hugo.Data.games.total }}</span>
+              <span class="ledger-label">游戏总数</span>
+            </div>
+            <div class="ledger-item">
+              <span class="ledger-num">{{ len $played }}</span>
+              <span class="ledger-label">玩过</span>
+            </div>
+            <div class="ledger-item">
+              <span class="ledger-num">{{ printf "%.0f" $totalHours }}</span>
+              <span class="ledger-label">总时长（小时）</span>
             </div>
           </div>
 
-          <!-- 游戏列表 -->
-          <div class="games-grid">
-            {{ range hugo.Data.games.games }}
-            <a href="{{ .app_url }}" target="_blank" class="game-card">
-              <div class="game-icon">
-                <img src="{{ .img_icon_url }}" alt="{{ .name }}" loading="lazy" />
+          {{ with index $played 0 }}
+          <!-- 最常玩：通栏主打卡片 -->
+          <a href="{{ .app_url }}" target="_blank" rel="noopener" class="game-hero">
+            <div class="game-cover">
+              <img src="{{ .cover_url }}" alt="{{ .name }}" loading="lazy" />
+            </div>
+            <div class="hero-info">
+              <span class="hero-eyebrow">玩得最多</span>
+              <h2 class="hero-name">{{ .name }}</h2>
+              <p class="hero-hours"><b>{{ .playtime_forever }}</b> 小时</p>
+              {{ if .last_played }}
+              <p class="hero-meta">最近游玩 {{ dateFormat "2006-01-02" .last_played }}</p>
+              {{ end }}
+              {{ with .achievements }}
+              <div class="ach">
+                <span class="ach-label">成就 {{ .achieved }}/{{ .total }}</span>
+                <span class="ach-bar"><i style="width: {{ printf "%.1f" (mul (div (float .achieved) (float .total)) 100) }}%"></i></span>
               </div>
-              <div class="game-info">
-                <h3 class="game-title" title="{{ .name }}">{{ .name }}</h3>
-                <div class="game-details">
-                  <span class="playtime">
-                    <i class="fas fa-clock"></i>
-                    {{ if gt .playtime_forever 0 }}
-                    {{ .playtime_forever }} 小时
-                    {{ else }}
-                    未玩过
-                    {{ end }}
-                  </span>
-                  {{ if .last_played }}
-                  <span class="last-played">
-                    <i class="fas fa-history"></i>
-                    {{ dateFormat "2006-01-02" .last_played }}
-                  </span>
-                  {{ end }}
+              {{ end }}
+            </div>
+          </a>
+          {{ end }}
+
+          <!-- 其余玩过的游戏 -->
+          <div class="games-grid">
+            {{ range after 1 $played }}
+            <a href="{{ .app_url }}" target="_blank" rel="noopener" class="game-card">
+              <div class="game-cover">
+                <img src="{{ .cover_url }}" alt="{{ .name }}" loading="lazy" />
+              </div>
+              <div class="card-info">
+                <h3 class="card-name" title="{{ .name }}">{{ .name }}</h3>
+                <p class="card-meta">
+                  <span>{{ .playtime_forever }} 小时</span>
+                  {{ if .last_played }}<span class="card-dot">·</span><span>{{ dateFormat "2006-01-02" .last_played }}</span>{{ end }}
+                </p>
+                {{ with .achievements }}
+                <div class="ach">
+                  <span class="ach-label">成就 {{ .achieved }}/{{ .total }}</span>
+                  <span class="ach-bar"><i style="width: {{ printf "%.1f" (mul (div (float .achieved) (float .total)) 100) }}%"></i></span>
                 </div>
+                {{ end }}
               </div>
             </a>
             {{ end }}
           </div>
+
+          {{ if $unplayed }}
+          <!-- 未开封的库存 -->
+          <div class="backlog">
+            <h2 class="backlog-title">未开封 <span class="backlog-count">{{ len $unplayed }} 款</span></h2>
+            <ul class="backlog-list">
+              {{ range $unplayed }}
+              <li>
+                <a href="{{ .app_url }}" target="_blank" rel="noopener">
+                  {{ if .img_icon_url }}<img src="{{ .img_icon_url }}" alt="" loading="lazy" />{{ end }}
+                  <span>{{ .name }}</span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
           {{ end }}
         </div>
         {{ partial "footer.html" . }}
@@ -62,108 +110,335 @@
   </article>
 
   <style>
-    /* 统计卡片样式 */
-    .games-stats {
+    /* ---- 统计条：账目式排版，细线上下夹住 ---- */
+    .steam-ledger {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.9rem 0.2rem;
+      margin: 1.5rem 0 2rem;
     }
 
-    .stats-card {
-      background-color: #2a2a2a;
-      border: 1px solid #3d3d3d;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .stats-number {
-      display: block;
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 0.25rem;
-    }
-
-    .stats-label {
-      font-size: 0.8em;
-      color: #999;
-    }
-
-    /* 游戏网格样式 */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    .ledger-item {
+      display: flex;
+      align-items: baseline;
       gap: 0.5rem;
     }
 
-    /* 游戏卡片样式 */
-    .game-card {
-      display: flex;
-      background-color: #1e1e1e;
-      border: 1px solid #3d3d3d;
-      border-radius: 4px;
-      text-decoration: none;
-      color: #fff;
+    .ledger-num {
+      font-size: 1.5em;
+      font-weight: bold;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .markdown-body .ledger-user {
+      font-size: 1.05em;
+      font-weight: bold;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .ledger-label {
+      font-size: 0.75em;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    /* ---- 封面图 ---- */
+    .game-cover {
+      position: relative;
+      aspect-ratio: 460 / 215;
       overflow: hidden;
-      transition: background-color 0.2s ease;
+      background: color-mix(in srgb, var(--text-color) 8%, transparent);
     }
 
-    .game-card:hover {
-      background-color: rgb(42, 163, 228);
-    }
-
-    .game-icon {
-      width: 80px;
-      /* 增加宽度 */
-      height: 80px;
-      /* 增加高度，保持正方形 */
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .game-icon img {
+    /* 覆盖主题的 .post-content img 规则：去掉顶部 6px 外边距造成的缝隙 */
+    .post-content .game-cover img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      margin: 0;
+      max-height: none;
+      transition: transform 0.35s ease;
     }
 
-    .game-info {
-      padding: 0.5rem;
+    .post-content .game-cover img:hover {
+      opacity: 1;
+    }
+
+    .game-cover.no-art::after {
+      content: "\f11b";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--text-secondary);
+    }
+
+    /* ---- 主打卡片 ---- */
+    /* 用 .markdown-body 提高优先级，压过主题的 .markdown-body a 全局下划线 */
+    .markdown-body .game-hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      color: var(--text-color);
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+    }
+
+    .game-hero .game-cover {
+      aspect-ratio: auto;
+      min-height: 100%;
+    }
+
+    .hero-info {
+      padding: 1.1rem 1.2rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: center;
+      gap: 0.35rem;
     }
 
-    .game-title {
-      font-size: 0.8em;
-      font-weight: bold;
+    .hero-eyebrow {
+      font-size: 0.7em;
+      letter-spacing: 0.15em;
+      color: var(--text-secondary);
+    }
+
+    .hero-name {
+      margin: 0;
+      font-size: 1.25em;
+      line-height: 1.3;
+      border: none;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .hero-hours {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.85em;
+    }
+
+    .hero-hours b {
+      font-size: 2.4em;
+      color: var(--text-color);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .hero-meta {
+      margin: 0;
+      font-size: 0.75em;
+      color: var(--text-secondary);
+    }
+
+    /* ---- 卡片网格 ---- */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .markdown-body .game-card {
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      color: var(--text-color);
       overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .game-card:hover,
+    .game-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 0 0 var(--border-color);
+    }
+
+    .game-card:hover .game-cover img,
+    .game-hero:hover .game-cover img {
+      transform: scale(1.04);
+    }
+
+    .game-card:focus-visible,
+    .game-hero:focus-visible {
+      outline: 2px solid var(--text-color);
+      outline-offset: 2px;
+    }
+
+    .card-info {
+      padding: 0.65rem 0.75rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+    }
+
+    .card-name {
+      margin: 0;
+      font-size: 0.85em;
+      line-height: 1.35;
+      border: none;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-meta {
+      margin: 0;
+      font-size: 0.72em;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .card-dot {
+      margin: 0 0.3em;
+    }
+
+    /* ---- 成就进度线 ---- */
+    .ach {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .ach-label {
+      font-size: 0.68em;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ach-bar {
+      display: block;
+      height: 3px;
+      background: color-mix(in srgb, var(--text-color) 15%, transparent);
+    }
+
+    .ach-bar i {
+      display: block;
+      height: 100%;
+      background: #4caf50;
+    }
+
+    /* ---- 未开封清单 ---- */
+    .backlog {
+      margin-top: 2.5rem;
+    }
+
+    .backlog-title {
+      font-size: 1em;
+      border: none;
+      padding: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .backlog-count {
+      font-size: 0.75em;
+      font-weight: normal;
+      color: var(--text-secondary);
+      margin-left: 0.4em;
+    }
+
+    .backlog-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.15rem 1.5rem;
+    }
+
+    .backlog-list li {
+      margin: 0;
+      border-bottom: 1px dashed color-mix(in srgb, var(--text-color) 25%, transparent);
+    }
+
+    .markdown-body .backlog-list a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.1rem;
+      font-size: 0.78em;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: none;
+    }
+
+    .markdown-body .backlog-list a:hover span {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .backlog-list a:hover {
+      color: var(--text-color);
+      background: none;
+    }
+
+    .post-content .backlog-list img {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      border-radius: 2px;
       margin: 0;
     }
 
-    .game-details {
-      display: flex;
-      flex-direction: column;
-      font-size: 0.7em;
-      color: #999;
+    .backlog-list span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
-    .playtime,
-    .last-played {
-      margin: 0.1rem 0;
+    @media (max-width: 640px) {
+      .game-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .game-hero .game-cover {
+        aspect-ratio: 460 / 215;
+        min-height: 0;
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
     }
 
-    .fas {
-      margin-right: 0.2rem;
+    @media (prefers-reduced-motion: reduce) {
+
+      .game-card,
+      .game-hero,
+      .game-cover img {
+        transition: none;
+      }
     }
   </style>
+
+  <script>
+    // 封面图 404 时退化为占位图标
+    document.querySelectorAll('.game-cover img').forEach(function (img) {
+      img.addEventListener('error', function () {
+        img.closest('.game-cover').classList.add('no-art');
+        img.remove();
+      });
+    });
+  </script>
   {{ partial "scripts.html" . }}
 </body>
 

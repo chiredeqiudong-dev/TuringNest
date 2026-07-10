@@ -162,6 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const images = document.querySelectorAll('.post-content img');
   images.forEach(img => {
+    // 链接内的图片（如游戏卡片封面）点击应跳转，不触发灯箱
+    if (img.closest('a')) {
+      img.style.cursor = '';
+      return;
+    }
     img.addEventListener('click', function() {
       modalImg.src = this.src;
       
