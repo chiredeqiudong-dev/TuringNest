@@ -9,13 +9,380 @@
       </header>
       <div class="post-content markdown-body">
         {{ .Content }}
-        <div id="travel-map" style="width: 100%; height: 80vh; min-height: 500px; margin-top: 30px;">
-        </div>
-        {{ partial "travelmap.html" . }}
+        {{ $spots := index hugo.Data "travel-spots" | default (slice) }}
+
+        <p class="travel-intro">到过 <b>{{ len $spots }}</b> 个地方，地图上的每一个足迹都是一段记忆。</p>
+
+        <div id="travel-map" style="width: 100%; height: 65vh; min-height: 460px;"></div>
+
+        <!-- 足迹时间线 -->
+        <section class="travel-log">
+          <h2 class="travel-log-title">足迹</h2>
+          <ol class="travel-log-list">
+            {{ range sort $spots "date" "desc" }}
+            <li class="travel-log-item">
+              <span class="travel-log-dot" aria-hidden="true"></span>
+              <div class="travel-log-body">
+                <p class="travel-log-head">
+                  <span class="travel-log-name">{{ .name }}</span>
+                  {{ if .date }}<time class="travel-log-date">{{ .date }}</time>{{ end }}
+                </p>
+                {{ if .posts }}
+                <p class="travel-log-posts">
+                  {{ range .posts }}
+                  <a href="{{ .url }}">{{ .title }}</a>
+                  {{ end }}
+                </p>
+                {{ end }}
+              </div>
+            </li>
+            {{ end }}
+          </ol>
+        </section>
       </div>
       {{ partial "footer.html" . }}
+      <a href="{{ "/" | relLangURL }}" class="back-btn">Back</a>
     </div>
   </div>
 </article>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+
+<style>
+  :root {
+    --travel-accent: #16a34a;
+  }
+
+  [data-theme="dark"] {
+    --travel-accent: #4ade80;
+  }
+
+  .travel-intro {
+    color: var(--text-secondary);
+  }
+
+  .travel-intro b {
+    color: var(--travel-accent);
+    font-size: 1.2em;
+  }
+
+  /* ---- 足迹时间线 ---- */
+  .travel-log {
+    margin-top: 2.5rem;
+  }
+
+  .travel-log-title {
+    font-size: 1.1em;
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .travel-log-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .travel-log-list::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    border-left: 2px dashed color-mix(in srgb, var(--text-color) 25%, transparent);
+  }
+
+  .travel-log-item {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    padding: 0.2rem 0.5rem 0.2rem 0;
+    margin: 0;
+  }
+
+  .travel-log-dot {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--text-color) 35%, var(--bg-color));
+    border: 2px solid var(--bg-color);
+    margin-top: 0.5em;
+    position: relative;
+    z-index: 1;
+    transition: background 0.15s ease;
+  }
+
+  .travel-log-item:hover .travel-log-dot {
+    background: var(--travel-accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--travel-accent) 45%, transparent);
+  }
+
+  .travel-log-item:hover .travel-log-name {
+    color: var(--travel-accent);
+  }
+
+  .travel-log-body {
+    min-width: 0;
+  }
+
+  .post-content .travel-log-head {
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .travel-log-name {
+    font-weight: bold;
+  }
+
+  .travel-log-date {
+    margin-left: 0.7em;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-content .travel-log-posts {
+    margin: 0 0 0.15rem;
+    font-size: 0.82em;
+    line-height: 1.8;
+  }
+
+  .post-content .travel-log-posts a {
+    color: var(--travel-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-right: 1em;
+  }
+
+  /* ---- 地图 ---- */
+  #travel-map {
+    border: 1px solid var(--border-color);
+  }
+
+  .leaflet-container {
+    background: var(--bg-color);
+    font-family: inherit;
+  }
+
+  .leaflet-container .leaflet-interactive,
+  .leaflet-container path {
+    outline: none;
+  }
+
+  /* 城市名：比省份名稍淡，默认不显示，点击圆环后出现 */
+  .leaflet-tooltip.travel-label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: color-mix(in srgb, var(--text-color) 70%, transparent);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .leaflet-tooltip-top::before,
+  .leaflet-tooltip-bottom::before,
+  .leaflet-tooltip-left::before,
+  .leaflet-tooltip-right::before {
+    border: none;
+  }
+
+  /* 省份名：纯文字，无边框弹窗 */
+  .leaflet-tooltip.travel-region-tip {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  .leaflet-top.leaflet-left .leaflet-control {
+    margin: 10px 0 0 10px !important;
+  }
+
+  .leaflet-control-zoom {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  .leaflet-control-zoom a,
+  .home-button {
+    box-sizing: border-box !important;
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 1 !important;
+    font-size: 16px !important;
+    font-family: Arial, sans-serif !important;
+    background-color: var(--bg-color) !important;
+    border: 1px solid color-mix(in srgb, var(--text-color) 30%, transparent) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+    cursor: pointer;
+  }
+
+  .leaflet-control-zoom a:hover,
+  .home-button:hover {
+    border-color: var(--text-secondary) !important;
+    color: var(--text-color) !important;
+  }
+
+  .leaflet-control-attribution {
+    background: var(--bg-color) !important;
+    color: var(--text-secondary) !important;
+  }
+
+  .leaflet-control-attribution a {
+    color: var(--text-secondary) !important;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    var spots = {{ index hugo.Data "travel-spots" | default (slice) | jsonify }};
+    // 数组根节点的 data 文件会被 jsonify 双重编码成字符串
+    if (typeof spots === 'string') {
+        try { spots = JSON.parse(spots); } catch (e) { spots = []; }
+    }
+    if (!Array.isArray(spots) || spots.length === 0) return;
+
+    // 扁平风格：不用瓦片底图，直接绘制省份色块
+    var map = L.map('travel-map', {
+        minZoom: 3,
+        maxZoom: 8,
+        zoomControl: false,
+        zoomSnap: 0.25,
+        attributionControl: false
+    });
+
+    var initialView = { center: [37, 105], zoom: 3.75 };
+    map.setView(initialView.center, initialView.zoom);
+
+    L.control.attribution({ prefix: false })
+        .addAttribution('边界数据 &copy; <a href="http://datav.aliyun.com/portal/school/atlas/area_selector" target="_blank" rel="noopener">DataV.GeoAtlas</a>')
+        .addTo(map);
+
+    function currentTheme() {
+        return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    }
+
+    var REGION_STYLE = {
+        light: {
+            base:    { fillColor: '#e8e8e8', fillOpacity: 1, color: '#ffffff', weight: 1, opacity: 1 },
+            visited: { fillColor: '#86efac', fillOpacity: 1, color: '#ffffff', weight: 1, opacity: 1 }
+        },
+        dark: {
+            base:    { fillColor: '#2e2e2e', fillOpacity: 1, color: '#1a1a1a', weight: 1, opacity: 1 },
+            visited: { fillColor: '#166534', fillOpacity: 1, color: '#1a1a1a', weight: 1, opacity: 1 }
+        }
+    };
+
+    var visitedProvinces = {};
+    spots.forEach(function(spot) {
+        if (spot.adcode) {
+            visitedProvinces[Math.floor(spot.adcode / 10000) * 10000] = true;
+        }
+    });
+
+    var regionLayer = null;
+
+    function styleFor(feature) {
+        var theme = REGION_STYLE[currentTheme()];
+        return visitedProvinces[feature.properties.adcode] ? theme.visited : theme.base;
+    }
+
+    fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(geojson) {
+            if (!geojson) return;
+            regionLayer = L.geoJSON(geojson, {
+                style: styleFor,
+                onEachFeature: function(feature, layer) {
+                    if (feature.properties && feature.properties.name) {
+                        layer.bindTooltip(feature.properties.name, {
+                            sticky: true,
+                            direction: 'top',
+                            className: 'travel-region-tip'
+                        });
+                    }
+                    layer.on('click', function() {
+                        map.fitBounds(layer.getBounds().pad(0.15));
+                    });
+                }
+            }).addTo(map);
+            regionLayer.bringToBack();
+        })
+        .catch(function() { /* 边界拉取失败时仅显示点位 */ });
+
+    new MutationObserver(function() {
+        if (regionLayer) regionLayer.setStyle(styleFor);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    var HomeControl = L.Control.extend({
+        options: { position: 'topleft' },
+        onAdd: function(map) {
+            var container = L.DomUtil.create('div', 'home-button');
+            container.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>';
+            container.title = '回到初始位置';
+            L.DomEvent.on(container, 'click', function() {
+                map.setView(initialView.center, initialView.zoom);
+            });
+            return container;
+        }
+    });
+    map.addControl(new HomeControl());
+    L.control.zoom({ position: 'topleft' }).addTo(map);
+
+    // 点位：浅绿圆环，默认不显示城市名，点击后显示
+    var markerGroup = L.featureGroup();
+
+    spots.forEach(function(spot) {
+        if (typeof spot.lat !== 'number' || typeof spot.lon !== 'number') return;
+
+        var marker = L.circleMarker([spot.lat, spot.lon], {
+            radius: 4,
+            fillColor: '#ffffff',
+            color: '#000000',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 1
+        });
+
+        marker.bindTooltip(spot.name, {
+            permanent: false,
+            direction: 'top',
+            offset: L.point(0, -6),
+            className: 'travel-label'
+        });
+
+        marker.on('click', function(e) {
+            L.DomEvent.stopPropagation(e);
+            if (this.isTooltipOpen()) {
+                this.closeTooltip();
+            } else {
+                this.openTooltip();
+            }
+        });
+
+        markerGroup.addLayer(marker);
+    });
+
+    map.addLayer(markerGroup);
+});
+</script>
 
 {{ partial "scripts.html" . }}

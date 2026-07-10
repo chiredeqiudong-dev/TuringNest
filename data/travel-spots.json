@@ -2,26 +2,48 @@
   {
     "name": "西充",
     "lat": 30.9950,
-    "lon": 105.8933
+    "lon": 105.8933,
+    "adcode": 511300,
+    "date": "2005-04",
+    "posts": []
   },
   {
     "name": "广州",
     "lat": 23.1291,
-    "lon": 113.2644
+    "lon": 113.2644,
+    "adcode": 440100,
+    "date": "2014-10",
+    "posts": []
   },
   {
     "name": "湛江",
     "lat": 21.2711,
-    "lon": 110.3578
+    "lon": 110.3578,
+    "adcode": 440800,
+    "date": "2023-10",
+    "posts": [
+      { "title": "湛江之湖光岩", "url": "/posts/huguangyan-in-zhanjiang/" },
+      { "title": "湛江之金沙湾", "url": "/posts/jinsha-bay-in-zhanjiang/" }
+    ]
   },
   {
     "name": "深圳",
     "lat": 22.5431,
-    "lon": 114.0579
+    "lon": 114.0579,
+    "adcode": 440300,
+    "date": "2025-12",
+    "posts": [
+      { "title": "深圳游记之人才公园与俞欣书店", "url": "/posts/shenzhen-travelogue-talent-park-and-yu-xin-Bookstore/" }
+    ]
   },
   {
-    "name": "香港-迪士尼",
+    "name": "香港",
     "lat": 22.3128,
-    "lon": 114.0419
+    "lon": 114.0419,
+    "adcode": 810000,
+    "date": "2026-01",
+    "posts": [
+      { "title": "腾讯实习总结", "url": "/posts/summary-of-Internship-at-tencent/" }
+    ]
   }
 ]

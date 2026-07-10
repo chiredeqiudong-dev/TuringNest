@@ -66,20 +66,14 @@ tags = [
   name = "Home"
   link = "https://turingzy.cn/"
 [[params.socials]]
-  name = "Travel"
-  link = "/travel-map/"
-[[params.socials]]
-  name = "Novels"
-  link = "/novels/"
-[[params.socials]]
-  name = "OneWord"
-  link = "/one-word/"
-[[params.socials]]
   name = "Games"
   link = "/games/"
 [[params.socials]]
-  name = "Movies"
-  link = "/movies/"
+  name = "Travel"
+  link = "/travel-map/"
+[[params.socials]]
+  name = "OneWord"
+  link = "/one-word/"
 [[params.socials]]
   name = "About"
   link = "/about/"
