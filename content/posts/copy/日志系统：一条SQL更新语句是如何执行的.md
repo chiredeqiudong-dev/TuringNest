@@ -6,7 +6,7 @@ tags:
   - 日志
 date: 2025-10-15
 ---
-> 转载：[极客时间-MySQL实战45讲](https://learn.lianglianglee.com/%e4%b8%93%e6%a0%8f/MySQL%e5%ae%9e%e6%88%9845%e8%ae%b2/02%20%20%e6%97%a5%e5%bf%97%e7%b3%bb%e7%bb%9f%ef%bc%9a%e4%b8%80%e6%9d%a1SQL%e6%9b%b4%e6%96%b0%e8%af%ad%e5%8f%a5%e6%98%af%e5%a6%82%e4%bd%95%e6%89%a7%e8%a1%8c%e7%9a%84%ef%bc%9f.md)，作者：林晓斌
+>转载：[极客时间-MySQL实战45讲](https://time.geekbang.org/column/139)，作者：林晓斌
 
 相信你还记得，一条查询语句的执行过程一般是经过连接器、分析器、优化器、执行器等功能模块，最后到达存储引擎。
 
