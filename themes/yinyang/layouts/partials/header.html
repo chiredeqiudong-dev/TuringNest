@@ -1,4 +1,7 @@
 {{ $curLanguageName := site.Language.LanguageName }}
+{{ if .IsPage }}
+<div id="scroll-progress"></div>
+{{ end }}
 <header>
   <div class="header-title-wrapper">
     <div class="header-title">
