@@ -13,7 +13,9 @@
     "lon": 113.2644,
     "adcode": 440100,
     "date": "2014-10",
-    "posts": []
+    "posts": [
+      {"title": "越秀公园游记", "url": "/posts/a-travel-journal-of-yuexiu-park/"}
+    ]
   },
   {
     "name": "湛江",
