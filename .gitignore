@@ -10,5 +10,9 @@ hugo.darwin
 # 脚本
 scripts/
 
+# 设置
+.vscode/
+
+# AI
 .opencode/
 CLAUDE.md
