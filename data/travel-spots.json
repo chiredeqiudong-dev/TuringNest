@@ -14,7 +14,10 @@
     "adcode": 440100,
     "date": "2014-10",
     "posts": [
-      {"title": "越秀公园游记", "url": "/posts/a-travel-journal-of-yuexiu-park/"}
+      {
+        "title": "越秀公园游记",
+        "url": "/posts/a-travel-journal-of-yuexiu-park/"
+      }
     ]
   },
   {
@@ -24,8 +27,14 @@
     "adcode": 440800,
     "date": "2023-10",
     "posts": [
-      { "title": "湛江之湖光岩", "url": "/posts/huguangyan-in-zhanjiang/" },
-      { "title": "湛江之金沙湾", "url": "/posts/jinsha-bay-in-zhanjiang/" }
+      {
+        "title": "湛江之湖光岩",
+        "url": "/posts/huguangyan-in-zhanjiang/"
+      },
+      {
+        "title": "湛江之金沙湾",
+        "url": "/posts/jinsha-bay-in-zhanjiang/"
+      }
     ]
   },
   {
@@ -35,7 +44,14 @@
     "adcode": 440300,
     "date": "2025-12",
     "posts": [
-      { "title": "深圳游记之人才公园与俞欣书店", "url": "/posts/shenzhen-travelogue-talent-park-and-yu-xin-Bookstore/" }
+      {
+        "title": "深圳游记之人才公园与俞欣书店",
+        "url": "/posts/shenzhen-travelogue-talent-park-and-yu-xin-Bookstore/"
+      },
+      {
+        "title": "腾讯实习总结",
+        "url": "/posts/summary-of-Internship-at-tencent/"
+      }
     ]
   },
   {
@@ -45,7 +61,23 @@
     "adcode": 810000,
     "date": "2026-01",
     "posts": [
-      { "title": "腾讯实习总结", "url": "/posts/summary-of-Internship-at-tencent/" }
+      {
+        "title": "腾讯实习总结",
+        "url": "/posts/summary-of-Internship-at-tencent/"
+      }
+    ]
+  },
+  {
+    "name": "上海",
+    "lat": 31.2304,
+    "lon": 121.4737,
+    "adcode": 310000,
+    "date": "2026-08",
+    "posts": [
+      {
+        "title": "初见上海",
+        "url": "/posts/hello-shanghai/"
+      }
     ]
   }
 ]
